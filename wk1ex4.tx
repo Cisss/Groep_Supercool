@@ -1,0 +1,17 @@
+# Ik kijk naar het noorden
+0 *x** -> E 1
+0 *E** -> x 3
+
+# Ik kijk naar het oosten
+1 ***x -> S 2
+1 ***S -> x 0
+
+# Ik kijk naar het zuiden
+2 **x* -> W 3
+2 **W* -> x 1
+
+# Ik kijk naar het westen
+3 x*** -> N 0
+3 N*** -> x 2
+
+#Wooowwwwww super cool....
