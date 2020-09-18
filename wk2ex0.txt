@@ -1,0 +1,11 @@
+1: Ze gebruiken Machine learning als oplossing voor alles. 
+Ze zullen het wel net hebben ontdekt.
+Terwijl we inmiddels weten dat het in sommige gevallen een goede oplossing is
+maar niet in alle gevallen.
+
+2: Het is niet haalbaar om machine learning in alle gevallen toe te passen. 
+In de meeste situaties is een model voldoende. 
+Het kost veel rekenkracht en stroom.
+Er is dus een grote impact op het millieu en op de portemonee wanneer 
+in alle situaties voor machine learning zal worden gekozen.
+Het gebruiken van modellen is daarom niet te vermijden en vaak een goede oplossing.
