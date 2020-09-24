@@ -31,7 +31,7 @@ def test():
     answer5 = s[0:2] + g[4]
     print("answer 5:", answer5)
 
-    # Opgave 6: 'schoenen' maken
+    # Opgave 6: 'schoenen' maken 2* g[-2]?
     answer6 = s[4:8] + g[-2:] + g[-2:]
     print("answer 6:", answer6)
 
