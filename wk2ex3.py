@@ -62,3 +62,60 @@ def dot(l, k):
         return 0
     else:
         return l[0] * k[0] + dot(l[1:], k[1:])
+
+def ind(e, L):
+    if L == [] or L == '':
+        return 0
+    elif L[0] == e:
+        return 0
+    else:
+        return 1 + ind(e, L[1:])
+
+#
+# Tests
+#
+assert ind(42, [55, 77, 42, 12, 42, 100]) == 2
+assert ind(42, list(range(0, 100))) == 42
+assert ind("hoi", ["hallo", 42, True]) == 3
+assert ind("hoi", ["oh", "hoi", "daar"]) == 1
+assert ind("i", "team") == 4
+assert ind(" ", "nader onderzoek") == 5
+
+def letter_score(let):
+    """ This function gives the value of the letter
+       Argument let: string with one letter
+    """
+    if let in 'AaDdEeIiNnOoRrSsTt':
+        return 1
+    elif let in 'GgHhLl':
+        return 2
+    elif let in 'BbCcMmPp':
+        return 3
+    elif let in 'JjKkUuVvWw':
+        return 4
+    elif let in 'Ff':
+        return 5
+    elif let in 'Zz':
+        return 6
+    elif let in 'XxYy':
+        return 8
+    elif let in 'Qq':
+        return 10
+    else:
+        return 0
+
+def scrabble_score(s):
+    if s == '':
+        return 0
+    else:
+        return letter_score(s[0]) + scrabble_score(s[1:])
+
+#
+# Tests
+#
+assert scrabble_score("quotums") == 24
+assert scrabble_score("jacquet") == 24
+assert scrabble_score("pyjama") == 20
+assert scrabble_score("abcdefghijklmnopqrstuvwxyz") == 84
+assert scrabble_score("?!@#$%^&*()") == 0
+assert scrabble_score("") == 0
