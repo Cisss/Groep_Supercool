@@ -105,6 +105,9 @@ def letter_score(let):
         return 0
 
 def scrabble_score(s):
+    """ This function gives the score of the word using the letter_score() function on eevery letter
+    Argument s: a string
+    """
     if s == '':
         return 0
     else:
@@ -119,3 +122,27 @@ assert scrabble_score("pyjama") == 20
 assert scrabble_score("abcdefghijklmnopqrstuvwxyz") == 84
 assert scrabble_score("?!@#$%^&*()") == 0
 assert scrabble_score("") == 0
+
+
+def transcribe(s):
+    """ 
+    """
+    if s == '':
+        return ''
+    elif s[0] in "ACGT":
+        return one_dna_to_rna(s[0]) + transcribe(s[1:])
+    else:
+        return " " + transcribe(s[1:])
+
+
+def one_dna_to_rna(c):
+    if c == 'A':
+        return 'U'
+    elif c == 'C':
+        return 'G'
+    elif c == 'G':
+        return 'C'
+    else:
+        return 'A'
+
+
