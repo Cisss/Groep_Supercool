@@ -8,7 +8,6 @@ import random
 import math
 from audio import *
 
-
 # een functie zodat we kunnen beginnen met een opfrisser
 # over list comprehensions...
 def three_ize(L):
@@ -21,7 +20,11 @@ def three_ize(L):
 
 
 # Te schrijven functie #1: scale
-
+def scale(L, scale_factor):
+    """power list elements by scale factor
+    """
+    sl = [scale_factor * x for x in L]
+    return sl
 
 # hier is een voorbeeld van hoe je op een andere
 # manier de functie three_ize kan schrijven:
@@ -36,13 +39,30 @@ def three_ize_by_index(L):
     return lc
 
 # Te schrijven functie #2: add_2
+def add_2(L, m):
+    n = min(len(L), len(m))
 
+    lc = [L[i] + m[i] for i in range(n)]
+    
+    return lc
 
 # Te schrijven functie #3: add_3
+def add_3(L, m, p):
+    n = min(len(L), len(m), len(p))
 
+    lc = [L[i] + m[i] + p[i] for i in range(n)]
+    
+    return lc
 
 # Te schrijven functie #4: add_scale_2
+def add_scale_2(L, m, L_scale, m_scale):
+    """ sum of list elements multiplied by scale factors 
+    """
+    n = min(len(L), len(m))
 
+    lc = [L[i] * L_scale + m[i] * m_scale for i in range(n)]
+
+    return lc
 
 # Hulpfunctie: randomize
 
@@ -64,6 +84,14 @@ def randomize(x, chance_of_replacing):
 
 # Te schrijven functie #5: replace_some
 
+def replace_some(L, change_of_replacing):
+    n = len(L)
+    lc = [randomize(L[x], change_of_replacing) for x in range(n)]
+
+    return lc
+
+assert replace_some(range(40, 50), 0) == list(range(40, 50))
+assert replace_some([42], 1.0) != [42]
 
 #
 # de functies hieronder betreffen geluidsbewerking...
@@ -94,7 +122,7 @@ def change_speed(filename, newsr):
     read_wav(filename, sound_data)  # laad gegevens IN sound_data
 
     samps = sound_data[0]           # de samples van de ruwe geluidsgolven
-
+    
     print("De eerste 10 geluidsdruksamples zijn\n", samps[:10])
     sr = sound_data[1]              # de sampling rate, sr
 
